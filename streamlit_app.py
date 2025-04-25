@@ -3,16 +3,15 @@ import pandas as pd
 import math
 from pathlib import Path
 
-#----------------------Hide Streamlit footer----------------------------
-hide_st_style = """
+# Inject CSS to hide the Streamlit footer
+hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
-#MainMenu {visibility: hidden;}
-footer {visibility: hidden;}
-header {visibility: hidden;}
-
-"""
-st.markdown(hide_st_style, unsafe_allow_html=True)
-#--------------------------------------------------------------------
 
 # Set the title and favicon that appear in the Browser's tab bar.
 st.set_page_config(
